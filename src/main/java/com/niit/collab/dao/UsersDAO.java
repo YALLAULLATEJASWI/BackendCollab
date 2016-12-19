@@ -12,4 +12,9 @@ public interface UsersDAO {
 	public List<Users> getuser(int id);
 	public Users logout(int id);
 	public Users authuser(String username,String password);
+	public Users profileof(String username);
+	public List<Users> nonfriends(int id);
+	public Users oneuser(int id);
 }
+
+

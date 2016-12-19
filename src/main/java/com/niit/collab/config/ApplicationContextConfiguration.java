@@ -15,10 +15,18 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.niit.collab.dao.BCommentDAO;
+import com.niit.collab.dao.BCommentDAOImpl;
 import com.niit.collab.dao.BlogDAO;
 import com.niit.collab.dao.BlogDAOImpl;
+import com.niit.collab.dao.BlogLikesDAO;
+import com.niit.collab.dao.BlogLikesDAOImpl;
+import com.niit.collab.dao.BlogRatingsDAO;
+import com.niit.collab.dao.BlogRatingsDAOImpl;
 import com.niit.collab.dao.EventDAO;
 import com.niit.collab.dao.EventDAOImpl;
+import com.niit.collab.dao.FCommentDAO;
+import com.niit.collab.dao.FCommentDAOImpl;
 import com.niit.collab.dao.ForumDAO;
 import com.niit.collab.dao.ForumDAOImpl;
 import com.niit.collab.dao.FriendDAO;
@@ -27,8 +35,12 @@ import com.niit.collab.dao.JobDAO;
 import com.niit.collab.dao.JobDAOImpl;
 import com.niit.collab.dao.UsersDAO;
 import com.niit.collab.dao.UsersDAOImpl;
+import com.niit.collab.model.BComment;
 import com.niit.collab.model.Blog;
+import com.niit.collab.model.BlogLikes;
+import com.niit.collab.model.BlogRatings;
 import com.niit.collab.model.Event;
+import com.niit.collab.model.FComment;
 import com.niit.collab.model.Forum;
 import com.niit.collab.model.Friend;
 import com.niit.collab.model.Job;
@@ -71,6 +83,10 @@ public SessionFactory getSessionFactory(DataSource dataSource){
 	sessionBuilder.addAnnotatedClass(Forum.class);
 	sessionBuilder.addAnnotatedClass(Job.class);
 	sessionBuilder.addAnnotatedClass(Friend.class);
+	sessionBuilder.addAnnotatedClass(FComment.class);
+	sessionBuilder.addAnnotatedClass(BComment.class);
+	sessionBuilder.addAnnotatedClass(BlogLikes.class);
+	sessionBuilder.addAnnotatedClass(BlogRatings.class);
 	return sessionBuilder.buildSessionFactory();
 	
 }
@@ -118,5 +134,28 @@ public JobDAO getJobDAO(SessionFactory sessionFactory){
 public FriendDAO getFriendDAO(SessionFactory sessionFactory){
 	
 	return new FriendDAOImpl(sessionFactory);
+}
+@Autowired
+@Bean(name="FCommentDAO")
+public FCommentDAO getFCommentDAO(SessionFactory sessionFactory){
+	
+	return new FCommentDAOImpl(sessionFactory);
+}
+@Autowired
+@Bean(name="BCommentDAO")
+public BCommentDAO getBCommentDAO(SessionFactory sessionFactory){
+	
+	return new BCommentDAOImpl(sessionFactory);
+}
+@Autowired
+@Bean(name="blogLikesDAO")
+public BlogLikesDAO getBlogLikesDAO(SessionFactory sessionFactory){
+	return new BlogLikesDAOImpl(sessionFactory);
+}
+
+@Autowired
+@Bean(name="blogRatingsDAO")
+public BlogRatingsDAO getBlogRatingsDAO(SessionFactory sessionFactory){
+	return new BlogRatingsDAOImpl(sessionFactory);
 }
 }

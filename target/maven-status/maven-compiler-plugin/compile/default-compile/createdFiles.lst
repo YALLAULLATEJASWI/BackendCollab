@@ -1,6 +1,8 @@
 com\niit\collab\config\ApplicationContextConfiguration.class
 com\niit\collab\dao\EventDAOImpl.class
+com\niit\collab\dao\FCommentDAO.class
 com\niit\collab\model\Blog.class
+com\niit\collab\model\Comments.class
 com\niit\collab\dao\FriendDAOImpl.class
 com\niit\collab\model\Users.class
 com\niit\collab\controllers\ForumController.class
@@ -8,6 +10,7 @@ com\niit\collab\model\BaseDomain.class
 com\niit\collab\dao\JobDAO.class
 com\niit\collab\model\Event.class
 com\niit\collab\controllers\UserController.class
+com\niit\collab\dao\CommentsDAO.class
 com\niit\collab\controllers\JobController.class
 com\niit\collab\controllers\FriendController.class
 com\niit\collab\dao\BlogDAO.class
@@ -17,14 +20,18 @@ com\niit\collab\controllers\LoginController.class
 com\niit\collab\controllers\ChatController.class
 com\niit\collab\dao\UsersDAOImpl.class
 com\niit\collab\model\Message.class
+com\niit\collab\model\FComment.class
 com\niit\collab\model\Forum.class
 com\niit\collab\dao\ForumDAO.class
+com\niit\collab\controllers\FCommentController.class
 com\niit\collab\model\Job.class
+com\niit\collab\dao\CommentsDAOImpl.class
 com\niit\collab\dao\EventDAO.class
 com\niit\collab\dao\FriendDAO.class
 com\niit\collab\model\OutputMessage.class
 com\niit\collab\dao\JobDAOImpl.class
 com\niit\collab\model\Friend.class
+com\niit\collab\dao\FCommentDAOImpl.class
 com\niit\collab\dao\BlogDAOImpl.class
 com\niit\collab\controllers\BlogController.class
 com\niit\collab\config\WebSocketConfig.class
